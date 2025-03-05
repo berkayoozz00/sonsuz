@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkay ❤️ Ece</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        html {
+            font-size: 16px;
+        }
+        body {
+            background-color: #ffe6e6;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            background: #ff4d4d;
+            color: white;
+            padding: 1.25rem;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+        nav {
+            background: #ff1a1a;
+            padding: 0.625rem;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.625rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+        }
+        section {
+            padding: 3.125rem 1.25rem;
+            position: relative;
+            z-index: 10;
+        }
+        .container {
+            max-width: 90%;
+            margin: auto;
+            background: white;
+            padding: 1.25rem;
+            border-radius: 0.625rem;
+            box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background: #ff4d4d;
+            color: white;
+            padding: 0.9375rem;
+            position: relative;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .heart {
+            font-size: 2.5rem;
+            color: red;
+        }
+        .falling-hearts {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+        }
+        .heart-icon {
+            position: absolute;
+            color: red;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        .infinity-text {
+            font-size: 1.875rem;
+            color: red;
+            font-weight: bold;
+            margin-top: 1.25rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @media (min-width: 48rem) {
+            nav {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .container {
+                max-width: 37.5rem;
+            }
+            .heart {
+                font-size: 3.125rem;
+            }
+            .infinity-text {
+                font-size: 2.5rem;
+            }
+            footer {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Berkay ❤️ Ece</header>
+    <nav>
+        <a href="#love">Aşkımız</a>
+        <a href="#about">Hakkımızda</a>
+        <a href="#contact">İletişim</a>
+    </nav>
+    
+    <div class="falling-hearts"></div>
+    
+    <section id="love">
+        <div class="container">
+            <h1 class="heart">❤️</h1>
+            <h1>Berkay, Ece'yi çok seviyor! 💖</h1>
+            <p>Bu site, Berkay'ın Ece'ye olan sevgisini göstermek için yapıldı. Sonsuza kadar sürecek bir aşk hikayesi! 💕</p>
+            <p class="infinity-text">Sonsuz seviyorum aşkım seni ❤️</p>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <h2>Bizim Hikayemiz</h2>
+            <p>Berkay Eceyi sonsuz seviyor! İnşallah evlenecekler bir gün!</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>İletişim</h2>
+            <p>Sevgi mesajlarınızı göndermek için: <strong>berkayveece@ask.com</strong></p>
+        </div>
+    </section>
+    
+    <footer>
+        &copy; 2025 Berkay ❤️ Ece - Sonsuz Aşk
+    </footer>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart-icon");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.querySelector(".falling-hearts").appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
