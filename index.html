@@ -11,55 +11,60 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
+        html {
+            font-size: 16px;
+        }
         body {
             background-color: #ffe6e6;
             text-align: center;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         header {
             background: #ff4d4d;
             color: white;
-            padding: 20px;
-            font-size: 24px;
+            padding: 1.25rem;
+            font-size: 1.5rem;
             position: relative;
             z-index: 10;
         }
         nav {
             background: #ff1a1a;
-            padding: 10px;
+            padding: 0.625rem;
             position: relative;
             z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.625rem;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 10px;
-            font-size: 18px;
+            font-size: 1.125rem;
         }
         section {
-            padding: 50px;
+            padding: 3.125rem 1.25rem;
             position: relative;
             z-index: 10;
         }
         .container {
-            max-width: 800px;
+            max-width: 90%;
             margin: auto;
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 1.25rem;
+            border-radius: 0.625rem;
+            box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
         }
         footer {
             background: #ff4d4d;
             color: white;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
+            padding: 0.9375rem;
+            position: relative;
             width: 100%;
-            font-size: 20px;
+            font-size: 1rem;
         }
         .heart {
-            font-size: 50px;
+            font-size: 2.5rem;
             color: red;
         }
         .falling-hearts {
@@ -74,7 +79,7 @@
         .heart-icon {
             position: absolute;
             color: red;
-            font-size: 24px;
+            font-size: 1.5rem;
             opacity: 0.8;
             animation: fall 5s linear infinite;
         }
@@ -83,16 +88,34 @@
             100% { transform: translateY(100vh) rotate(360deg); }
         }
         .infinity-text {
-            font-size: 40px;
+            font-size: 1.875rem;
             color: red;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 1.25rem;
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.2); }
             100% { transform: scale(1); }
+        }
+        @media (min-width: 48rem) {
+            nav {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .container {
+                max-width: 37.5rem;
+            }
+            .heart {
+                font-size: 3.125rem;
+            }
+            .infinity-text {
+                font-size: 2.5rem;
+            }
+            footer {
+                font-size: 1.25rem;
+            }
         }
     </style>
 </head>
@@ -118,7 +141,7 @@
     <section id="about">
         <div class="container">
             <h2>Bizim Hikayemiz</h2>
-            <p>Berkay ve Ece, birbirine aşık iki güzel insan. Onların hikayesi, sevgiyle ve mutlulukla dolu!</p>
+            <p>Berkay Eceyi sonsuz seviyor! İnşallah evlenecekler bir gün!</p>
         </div>
     </section>
     
