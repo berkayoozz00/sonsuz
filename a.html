@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkay ❤️ Ece</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #ffe6e6;
+            text-align: center;
+            overflow: hidden;
+        }
+        header {
+            background: #ff4d4d;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            position: relative;
+            z-index: 10;
+        }
+        nav {
+            background: #ff1a1a;
+            padding: 10px;
+            position: relative;
+            z-index: 10;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 18px;
+        }
+        section {
+            padding: 50px;
+            position: relative;
+            z-index: 10;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background: #ff4d4d;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 20px;
+        }
+        .heart {
+            font-size: 50px;
+            color: red;
+        }
+        .falling-hearts {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+        }
+        .heart-icon {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            opacity: 0.8;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        .infinity-text {
+            font-size: 40px;
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>Berkay ❤️ Ece</header>
+    <nav>
+        <a href="#love">Aşkımız</a>
+        <a href="#about">Hakkımızda</a>
+        <a href="#contact">İletişim</a>
+    </nav>
+    
+    <div class="falling-hearts"></div>
+    
+    <section id="love">
+        <div class="container">
+            <h1 class="heart">❤️</h1>
+            <h1>Berkay, Ece'yi çok seviyor! 💖</h1>
+            <p>Bu site, Berkay'ın Ece'ye olan sevgisini göstermek için yapıldı. Sonsuza kadar sürecek bir aşk hikayesi! 💕</p>
+            <p class="infinity-text">Sonsuz seviyorum aşkım seni ❤️</p>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <h2>Bizim Hikayemiz</h2>
+            <p>Berkay ve Ece, birbirine aşık iki güzel insan. Onların hikayesi, sevgiyle ve mutlulukla dolu!</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>İletişim</h2>
+            <p>Sevgi mesajlarınızı göndermek için: <strong>berkayveece@ask.com</strong></p>
+        </div>
+    </section>
+    
+    <footer>
+        &copy; 2025 Berkay ❤️ Ece - Sonsuz Aşk
+    </footer>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart-icon");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.querySelector(".falling-hearts").appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
